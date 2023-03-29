@@ -19,7 +19,7 @@ const createAndSendToken = (user, statusCode, req, res) => {
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ), // covert 90 days to milliseconds
     httpOnly: true, // cookie cannot be accessed or modified in any way in the browser (prevent cross-site scripting attacks)
-    secure: req.secure || req.headers('x-forwarded-proto') === 'https', // uses https
+    secure: req.secure || req.headers['x-forwarded-proto'] === 'https', // uses https
   });
 
   user.password = undefined; // removes password from the output
