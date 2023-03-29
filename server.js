@@ -4,8 +4,8 @@ const dotenv = require('dotenv');
 // catches any other error that isnt handled (last resort)
 // occurs first so it can catch any error in whole app
 process.on('uncaughtException', (err) => {
-  console.log(err.name, err.message);
   console.log('UNCAUGHT EXCEPTION! Shutting down...');
+  console.log(err.name, err.message);
   process.exit(1);
 });
 

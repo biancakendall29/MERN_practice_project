@@ -190,11 +190,11 @@ tourSchema.pre(/^find/, function (next) {
 });
 
 // post middleware: runs after query has finished
-tourSchema.post(/^find/, function (docs, next) {
-  console.log(`Query took ${Date.now() - this.start} milliseconds`);
-  //   console.log(docs);
-  next();
-});
+// tourSchema.post(/^find/, function (docs, next) {
+//   console.log(`Query took ${Date.now() - this.start} milliseconds`);
+//   //   console.log(docs);
+//   next();
+// });
 
 // AGGREGATION MIDDLEWARE: adds hooks before and after aggregation happens
 // 'this' keyword points to current aggregation object
